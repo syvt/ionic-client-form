@@ -8,6 +8,7 @@ import { DynamicMediasPage } from '../dynamic-medias/dynamic-medias';
 import { DynamicCardSocialPage } from '../dynamic-card-social/dynamic-card-social';
 import { DynamicListPage } from '../dynamic-list/dynamic-list';
 import { DynamicListOrderPage } from '../dynamic-list-order/dynamic-list-order';
+import { BaoduongPage } from '../baoduong/baoduong';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -16,11 +17,10 @@ export class TabsPage {
   
   tabs: any = [
     {
-      root: LoginPage,
-      title: 'Login',
-      icon: 'log-in'
-    }
-    ,
+      root: BaoduongPage,
+      title: 'Bảo dưỡng',
+      icon: 'build'
+    },
     {
       root: DynamicFormWebPage,
       title: 'Form web',

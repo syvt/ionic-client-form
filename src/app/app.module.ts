@@ -37,11 +37,13 @@ import { ApiSqliteService } from '../services/apiSqliteService';
 import { ResultsPage } from '../pages/results/results';
 import { GoogleMapPage } from '../pages/google-map/google-map';
 import { ApiMapService } from '../services/apiMapService';
+import { BaoduongPage } from '../pages/baoduong/baoduong';
 
 @NgModule({
   declarations: [
     MyApp,
     LoginPage,
+    BaoduongPage,
     HomePage,
     ResultsPage,
     TabsPage,
@@ -66,6 +68,7 @@ import { ApiMapService } from '../services/apiMapService';
   entryComponents: [
     MyApp,
     LoginPage,
+    BaoduongPage,
     HomePage,
     ResultsPage,
     TabsPage,

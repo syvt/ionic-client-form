@@ -10,10 +10,10 @@ import { ApiResourceService } from '../../services/apiResourceServices';
 import { ApiAuthService } from '../../services/apiAuthService';
 
 @Component({
-  selector: 'page-login',
-  templateUrl: 'login.html'
+  selector: 'page-baoduong',
+  templateUrl: 'baoduong.html'
 })
-export class LoginPage {
+export class BaoduongPage {
 
   constructor(
     private navCtrl: NavController
@@ -28,7 +28,7 @@ export class LoginPage {
   ) { }
 
   ngOnInit() {
-   this.pubService.getDynamicForm("http://localhost:8080/json-form/form?form=login")
+   this.pubService.getDynamicForm("http://localhost:8080/json-form/form?form=baoduong")
    .then(data=>{
      console.log('DATA TRA VE',data);
 
@@ -37,7 +37,9 @@ export class LoginPage {
        form:data
      }
 
-     this.openModal(DynamicFormWebPage,formData);
+     //this.openModal(DynamicFormWebPage,formData);
+
+     this.navCtrl.push(DynamicFormWebPage,formData);
 
   })
    .catch(err=>console.log('err',err));
@@ -54,12 +56,8 @@ export class LoginPage {
   callbackFunction = function (res,parent){
   
     return new Promise((resolve,reject)=>{
-      
-      if (res.data.status==='OK'){
         console.log('res OK', res);
-        this.navCtrl.setRoot(TabsPage);
         resolve({next:"CLOSE"});
-      }
     })
   }.bind(this);
 
